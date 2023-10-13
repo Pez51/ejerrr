@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class TestVehiculos {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Bienvenido al programa de selección de vehículos.");
+        System.out.print("Por favor, ingrese la marca del vehículo (Toyota, Massda o Ford): ");
+        String marca = scanner.nextLine();
+
+        System.out.print("¿Desea un vehículo mecánico? (true/false): ");
+        boolean esMecanico = scanner.nextBoolean();
+
+        Vehiculo vehiculo = new Vehiculo(marca, "Color", esMecanico);
+
+        System.out.println("\nInformación del Vehículo:");
+        System.out.println(vehiculo);
+
+        scanner.close();
+    }
+}
