@@ -9,11 +9,11 @@ public class Vehiculo {
         this.color = color;
         this.esMecanico = esMecanico;
         if (marca.equals("Toyota")) {
-            this.precio = 16665552;
-        } else if (marca.equals("Massda")) {
-            this.precio = 5000692;
+            this.precio = 166655.52;
+        } else if (marca.equals("Nissan")) {
+            this.precio = 50006.92;
         } else if (marca.equals("Ford")) {
-            this.precio = 106582391;
+            this.precio = 1065823.91;
         } else {
             this.precio = 0;
         }
@@ -51,15 +51,17 @@ public class Vehiculo {
         double descuento = esMecanico ? 0.4 : 0.3;
         double precioConDescuento = precio - (precio * descuento);
         double precioConIgv = precioConDescuento * 1.18;
-        return precioConIgv;
+        return precioConIgv + precio;
     }
 
     @Override
     public String toString() {
         return "Marca: " + marca + "\n" +
                "Color: " + color + "\n" +
-               "Es mecánico: " + esMecanico + "\n" +
-               "Precio Inicial: " + precio + "\n" +
-               "Precio Final con IGV: " + calcularPrecioFinal();
+               "Es mecanico? : " + esMecanico + "\n" +
+               "Precio Inicial: S/." + precio + "\n" +
+               "Precio Final con IGV: S/." + calcularPrecioFinal();
     }
 }
+
+
